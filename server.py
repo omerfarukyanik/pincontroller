@@ -12,7 +12,7 @@ leds = [led1, led2, led3, led4, led5]
 
 
 # Web server route to control the LED
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
 
