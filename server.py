@@ -21,7 +21,7 @@ def index():
 @app.route("/api/slider", methods=["POST"])
 def toggle_led():
     data = request.get_json()
-    slider_value = data["slider"]
+    slider_value = int(data["slider"])
     open_leds_for_slider(slider_value)
     return {"status": "success", "led_state": slider_value}
 
