@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPIO Control</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>GPIO Control</h1>
-    <button onclick="toggleLED()">Toggle LED</button>
+    <div class="slide-container">
+        <label for="ledRange"></label><input type="range" min="0" max="5" value="0" class="slider" id="ledRange">
+    </div>
+
 
     <script>
-        function toggleLED() {
-            fetch("/api/toggle", { method: "POST" })
-                .then(response => response.json())
-                .then(data => console.log("LED state:", data.led_state))
-                .catch(error => console.error("Error toggling LED:", error));
-        }
+
     </script>
 </body>
 </html>
